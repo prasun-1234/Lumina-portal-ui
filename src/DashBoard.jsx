@@ -85,31 +85,31 @@ function DashBoard({ submitFormData }) {
                      <table border="1" cellPadding="8" cellSpacing="0" className='w-full  ' style={{ borderCollapse: 'collapse' }}>
                         <thead className='bg-[#F5F5F5] md:table-header-group hidden'>
                            <tr>
-                              <th className='text-left p-[.625rem] lg:py-[1.25rem] lg:px-[2rem] text-[#374151] font-semibold text-[1rem]' >Date of Scan</th>
-                              <th className='text-left lg:py-[1.25rem] p-[.625rem] lg:px-[2rem] text-[#374151] font-semibold text-[1rem]' >Type of Scan</th>
-                              <th className='text-left lg:py-[1.25rem] lg:px-[2rem] p-[.625rem] text-[#374151] font-semibold text-[1rem]' >Status of the Scan</th>
-                              <th className='text-left lg:text-center lg:py-[1.25rem] lg:px-[2rem] text-[#374151] p-[.625rem] font-semibold text-[1rem]' >Report Status</th>
+                              <th className='w-[25%] text-left p-[.625rem] lg:py-[1.25rem] lg:px-[2rem] text-[#374151] font-semibold text-[1rem]' >Date of Scan</th>
+                              <th className='w-[25%] text-left lg:py-[1.25rem] p-[.625rem] lg:px-[2rem] text-[#374151] font-semibold text-[1rem]' >Type of Scan</th>
+                              <th className='w-[25%] text-left lg:py-[1.25rem] lg:px-[2rem] p-[.625rem] text-[#374151] font-semibold text-[1rem]' >Status of the Scan</th>
+                              <th className='w-[25%] text-left lg:text-center lg:py-[1.25rem] lg:px-[2rem] text-[#374151] p-[.625rem] font-semibold text-[1rem]' >Report Status</th>
                            </tr>
                         </thead>
                         <tbody>
                            {groupByEmail[ip].map((entry) => (
                               <tr key={entry.id} className='md:table-row flex flex-col md:p-0 p-4 ' >
-                                 <td className='md:table-cell flex flex-col text-left p-[.625rem] lg:py-[1.25rem] lg:px-[2rem] text-[1rem] font-normal text-[#374151] '>
+                                 <td className='w-[25%] md:table-cell flex flex-col text-left p-[.625rem] lg:py-[1.25rem] lg:px-[2rem] text-[1rem] font-normal text-[#374151] '>
                                     <span className='md:hidden block text-left  text-[#374151] font-semibold text-[1rem]'>Date of Scan</span>
                                     <span>{entry[3]} {entry[1]} </span>
                                  </td>
-                                 <td className='md:table-cell flex flex-col text-left p-[.625rem] lg:py-[1.25rem] lg:px-[2rem] text-[1rem] font-normal text-[#374151] '>
+                                 <td className='w-[25%] md:table-cell flex flex-col text-left p-[.625rem] lg:py-[1.25rem] lg:px-[2rem] text-[1rem] font-normal text-[#374151] '>
                                     <span className='md:hidden block text-left  text-[#374151] font-semibold text-[1rem]'>Type Of Scan</span>
                                     <span>{entry[21]}</span>
                                  </td>
-                                 <td className='md:table-cell flex flex-col text-left p-[.625rem] lg:py-[1.25rem] lg:px-[2rem] text-[1rem] font-normal text-[#374151] '>
+                                 <td className='w-[25%] md:table-cell flex flex-col text-left p-[.625rem] lg:py-[1.25rem] lg:px-[2rem] text-[1rem] font-normal text-[#374151] '>
                                     <span className='md:hidden block text-left  text-[#374151] font-semibold text-[1rem]'>Status Of  the Scan</span>
                                     <span className="flex w-full h-full items-center gap-x-[.75rem] ">
                                        {entry.is_read === '1' ? <img src={completeLogo} className='w-auto h-auto' /> : <ScheduleSvgLumina />}
                                        {entry.is_read === '1' ? "Scan Completed" : "Scan Scheduled"}
                                     </span>
                                  </td>
-                                 <td className='md:inline-flex w-full flex-col md:text-center md:items-center flex md:justify-center justify-start p-[.625rem] lg:py-[1.25rem] lg:px-[2rem] text-[1rem] font-normal text-[#374151] '>
+                                 <td className='w-[25%] md:inline-flex  flex-col md:text-center md:items-center flex md:justify-center justify-start p-[.625rem] lg:py-[1.25rem] lg:px-[2rem] text-[1rem] font-normal text-[#374151] '>
                                     <span className='md:hidden block text-left  text-[#374151] font-semibold text-[1rem] pb-2'>Report Status</span>
                                     <button key={entry.id} onClick={() => handleAnimation(entry.id)} className={`max-w-[13.5rem] w-full h-auto px-5 py-3 flex items-center rounded-md justify-between font-semibold text-[1rem] border ${entry.is_read === "1" ? "generated" : "pending"} `}>
                                        {entry.is_read === '1' ? (
@@ -137,7 +137,7 @@ function DashBoard({ submitFormData }) {
 }
 
 DashBoard.propTypes = {
-   submitFormData: PropTypes.func.isRequired,
+   submitFormData: PropTypes.func,
    className: PropTypes.string,
 };
 export default DashBoard

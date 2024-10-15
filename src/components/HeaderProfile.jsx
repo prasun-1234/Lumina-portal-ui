@@ -25,10 +25,10 @@ const UserProfile = ({ profilePic, userName, date, onLogout, className }) => {
 };
 
 UserProfile.propTypes = {
-   profilePic: PropTypes.string.isRequired,
-   userName: PropTypes.string.isRequired,
-   date: PropTypes.string.isRequired,
-   onLogout: PropTypes.func.isRequired,
+   profilePic: PropTypes.string,
+   userName: PropTypes.string,
+   date: PropTypes.string,
+   onLogout: PropTypes.func,
    className: PropTypes.string,
 };
 

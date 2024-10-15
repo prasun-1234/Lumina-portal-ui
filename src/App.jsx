@@ -1,6 +1,7 @@
 import { lazy, Suspense, useState } from 'react';
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
+import Temp from './Temp';
 
 const SignUpPage = lazy(() => import('./Auth/SignUp'));
 
@@ -33,6 +34,7 @@ function App() {
           </Routes>
 
         </Suspense>
+        {/* <Temp /> */}
 
       </div>
     </>
