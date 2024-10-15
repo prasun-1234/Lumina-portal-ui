@@ -1,42 +1,43 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.signup-section {
+  background: rgb(217, 230, 255);
+  background: radial-gradient(circle, rgba(217, 230, 255, 1) 15%, rgba(255, 255, 255, 1) 78%);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.signup-section img.body-img {
+  border-radius: 0 8px 8px 0;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dashboard-div table tr:nth-child(even) {
+  background-color: #F6F5FF;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.dashboard-div table button.generated {
+  border: 1px solid #1E3A8A;
 }
 
-.card {
-  padding: 2em;
+.dashboard-div table button.pending {
+  border: 1px solid #9CA3AF;
+  color: #9CA3AF;
 }
 
-.read-the-docs {
-  color: #888;
+.gradient-span {
+  border-radius: 1809px;
+  background: rgba(241, 239, 255, 0.60);
+  filter: blur(217px);
+  z-index: -1;
+}
+
+.drop-down-box::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: 42px;
+  background: white;
+  width: 12px;
+  height: 12px;
+  transform: rotate(45deg);
+  /* border: 1px solid; */
+  z-index: 2;
+  border-left: 1px solid #D4D4D4;
+  border-top: 1px solid #D4D4D4;
 }
