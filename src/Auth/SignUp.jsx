@@ -17,6 +17,7 @@ export default function SignUp({ onFormSubmit }) {
    const formId = 3;
    const consumerKey = import.meta.env.VITE_CONSUMER_KEY;
    const consumerSecret = import.meta.env.VITE_CONSUMER_SECRET;
+   
 
    const auth = btoa(`${consumerKey}:${consumerSecret}`);
 
