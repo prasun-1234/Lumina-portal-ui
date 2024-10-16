@@ -119,8 +119,8 @@ export default function SignUp({ onFormSubmit }) {
                      <form onSubmit={handleSubmit} className="w-full lg:col-span-8 md:col-span-7  col col-span-12  flex flex-col items-start lg:p-10 p-8">
                         <LuminaFormImg alt="lumina logo" className='w-auto h-full max-h-[6.25rem]' />
                         {formFields.map((field) => (
-                           <div key={field.id} className='w-full mt-8'>
-                              <label htmlFor={`input_${field.id}`} className='text-[#626262]' >{field.label}</label>
+                           <div key={field.id} className='w-full mt-8 signup-form'>
+                              <label htmlFor={`input_${field.id}`} className='text-[#333333]' >{field.label}</label>
                               <input
                                  type={field.type}
                                  id={`input_${field.formId}_${field.id}`}
@@ -129,7 +129,7 @@ export default function SignUp({ onFormSubmit }) {
                                  onChange={handleChange}
                                  required={field.isRequired}
                                  placeholder={field.placeholder || ''}
-                                 className='block w-full mt-2 rounded-md border-0 py-3 px-6 text-[#626262] shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+                                 className='block w-full mt-2 rounded-md border-0 py-3 px-6 text-[#626262]  placeholder:text-gray-400  sm:text-sm sm:leading-6'
                               />
                            </div>
                         ))}
