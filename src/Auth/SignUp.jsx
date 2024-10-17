@@ -17,7 +17,7 @@ export default function SignUp({ onFormSubmit }) {
    const formId = 3;
    const consumerKey = import.meta.env.VITE_CONSUMER_KEY;
    const consumerSecret = import.meta.env.VITE_CONSUMER_SECRET;
-   
+
 
    const auth = btoa(`${consumerKey}:${consumerSecret}`);
 
@@ -50,6 +50,26 @@ export default function SignUp({ onFormSubmit }) {
             console.error('Error fetching form data:', error);
          }
       };
+      const fetchMailData = async () => {
+         try {
+            const response = await fetch('http://localhost:3000/api/get-user', {
+               headers: {
+                  'Content-Type': 'application/json',
+                  // Add any necessary headers here
+               },
+            });
+
+            if (!response.ok) {
+               throw new Error(`Error: ${response.status} ${response.statusText}`);
+            }
+
+            const mailData = await response.json();
+            console.log('mailData', mailData);
+         } catch (error) {
+            console.error('Error fetching mail data:', error);
+         }
+      };
+      fetchMailData();
 
       fetchFormData();
    }, [formId]);
